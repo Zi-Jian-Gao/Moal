@@ -7,6 +7,8 @@
 ## Abstract
 Class-Incremental Learning (CIL) enables models to continuously learn new classes while mitigating catastrophic forgetting. Recently, Pre-Trained Models (PTMs) have greatly enhanced CIL performance, even when fine-tuning is limited to the first task. This advantage is particularly beneficial for CIL methods that freeze the feature extractor after first-task fine-tuning, such as analytic learning-based approaches using a least squares solution-based classification head to acquire knowledge recursively. In this work, we revisit the analytical learning approach combined with PTMs and identify its limitations in adapting to new classes, leading to sub-optimal performance. To address this, we propose the **Mo**mentum-based  **A**nalytical **L**earning (**MoAL**) approach. MoAL achieves robust knowledge memorization via an analytical classification head and improves adaptivity to new classes through momentum-based adapter weight interpolation, also leading to forgetting outdated knowledge. Importantly, we introduce a knowledge rumination mechanism that leverages refined adaptivity, allowing the model to revisit and reinforce old knowledge, thereby improving performance on old classes. MoAL facilitates the acquisition of new knowledge and consolidates old knowledge, achieving a win-win outcome between plasticity and stability. Extensive experiments on multiple datasets and incremental settings demonstrate that MoAL significantly outperforms current state-of-the-art methods.
 
+## Quantitive Comparisions with SOTA methods
+
 ## Installation and Usage
 
 ### Run experiment
@@ -52,5 +54,22 @@ When using the pre-trained weights of iBOT and DINO, you should download the cor
       model = vit_base_patch16_224_adapter(False, **kwargs)
       ckpt = torch.load('Your_path', map_location='cpu')['state_dict']
 ```
+### To Train
 
+```bash
+python main.py --config=exps\MoAL_[dataset_name].json
+```
+
+
+
+## **Acknowledgments**
+
+
+We thank the following repos providing helpful components/functions in our work.
+
+- [PyCIL](https://github.com/G-U-N/PyCIL)
+- [RevisitingCIL](https://github.com/zhoudw-zdw/RevisitingCIL)
+- [l2p-pytorch](https://github.com/JH-LEE-KR/l2p-pytorch)
+- [CODA-Prompt](https://github.com/GT-RIPL/CODA-Prompt)
+- [LAMDA-PILOT](https://github.com/sun-hailong/LAMDA-PILOT)
 
