@@ -11,6 +11,7 @@ Class-Incremental Learning (CIL) enables models to continuously learn new classe
 <p align="center">
 <img src="Moal/figs/Experiment.png" width="60%">
 </p>
+
 Following the widely used benchmarks，two metrics are adopted for evaluation. The overall performance is evaluated by the average incremental accuracy $\bar{A}(\%): \bar{A}=\frac{1}{T} \sum_{t=1}^T A_t$ where $T$ and $A_t$ respectively denote the number of incremental tasks and the test accuracy on all seen classes at task $t$. Another metric is the last-task accuracy $A_T(\%)$, which denotes the final average accuracy on all classes.
 
 ### Run experiment
