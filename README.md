@@ -75,7 +75,7 @@ If you found our work useful for your research, please cite our work:
 
 @inproceedings{moal,
  author = {Gao, Zijian and Jia, Wangwang and Zhang, Xingxing and Zhou, Dulan and Xu, Kele and Feng, Dawei and Dou, Yong and Mao, Xinjun and Wang, Huaimin},
- booktitle = {Conference on Computer Vision and Pattern Recognition},
+ booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
  title = {Knowledge Memorization and Rumination for Pre-trained Model-based Class-Incremental Learning},
  year = {2025}
 }
