@@ -1,4 +1,4 @@
-## Knowledge Memorization and Rumination for Pre-trained Model-based Class-Incremental Learning
+## Knowledge Memorization and Rumination for Pre-trained Model-based Class-Incremental Learning (CVPR25)
 <p align="center">
 <img src="Moal/figs/method.jpg" width="100%">
 </p>
@@ -70,3 +70,12 @@ We thank the following repos providing helpful components/functions in our work.
 - [CODA-Prompt](https://github.com/GT-RIPL/CODA-Prompt)
 - [LAMDA-PILOT](https://github.com/sun-hailong/LAMDA-PILOT)
 
+## Citation
+If you found our work useful for your research, please cite our work:
+
+@inproceedings{gao,
+ author = {Gao, Zijian and Jia, Wangwang and Zhang, Xingxing and Zhou, Dulan and Xu, Kele and Feng, Dawei and Dou, Yong and Mao, Xinjun and Wang, Huaimin},
+ booktitle = {Advances in Neural Information Processing Systems},
+ title = {Conference on Computer Vision and Pattern Recognition},
+ year = {2025}
+}
