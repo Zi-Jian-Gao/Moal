@@ -24,3 +24,33 @@ We have implemented the pre-processing datasets as follows:
 - **OmniBenchmark**: Google Drive: [link](https://drive.google.com/file/d/1AbCP3zBMtv_TDXJypOCnOgX8hJmvJm3u/view?usp=sharing) or Onedrive: [link](https://entuedu-my.sharepoint.com/:u:/g/personal/n2207876b_e_ntu_edu_sg/EcoUATKl24JFo3jBMnTV2WcBwkuyBH0TmCAy6Lml1gOHJA?e=eCNcoA)
 - **Car196**: [link](https://github.com/jhpohovey/StanfordCars-Dataset)
 - **CUB**: [link](https://www.vision.caltech.edu/datasets/cub_200_2011/)
+
+### Pre-trained weights
+
+- [Sup-21K VIT](https://storage.googleapis.com/vit_models/imagenet21k/ViT-B_16.npz)
+- [iBOT](https://lf3-nlp-opensource.bytetos.com/obj/nlp-opensource/archive/2022/ibot/vitb_16/checkpoint_teacher.pth)
+- [DINO](https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth)  
+
+When training , you should specify the folder of your dataset in `utils/data.py`.
+
+```python
+  def download_data(self):
+     assert 0,"You should specify the folder of your dataset"
+     train_dir = '[DATA-PATH]/train/'
+     test_dir = '[DATA-PATH]/val/'
+```
+
+When using the pre-trained weights of iBOT and DINO, you should download the corresponding pre-trained weights to the **Moal/checkpoints/** folder.
+
+```python
+  def vit_base_patch16_224_adapter_dino(pretrained=False, **kwargs):
+      model = VisionTransformer(patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
+          norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+      ckpt = torch.load('Your_path', map_location='cpu')
+
+  def vit_base_patch16_224_adapter_ibot(pretrained=False, **kwargs):
+      model = vit_base_patch16_224_adapter(False, **kwargs)
+      ckpt = torch.load('Your_path', map_location='cpu')['state_dict']
+```
+
+
