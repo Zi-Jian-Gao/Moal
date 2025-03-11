@@ -74,13 +74,8 @@ We thank the following repos providing helpful components/functions in our work.
 If you found our work useful for your research, please cite our work:
 
 @inproceedings{gao,
-
  author = {Gao, Zijian and Jia, Wangwang and Zhang, Xingxing and Zhou, Dulan and Xu, Kele and Feng, Dawei and Dou, Yong and Mao, Xinjun and Wang, Huaimin},
- 
  booktitle = {Advances in Neural Information Processing Systems},
- 
  title = {Conference on Computer Vision and Pattern Recognition},
- 
  year = {2025}
- 
 }
